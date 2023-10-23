@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Review Page</title>
+      
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+      
+            <link rel="stylesheet" href="./style.css">
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+      
+      </head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Results</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Overall Rating</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Rating</th>
+                        <th>Name</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for review in reviews %}
+                    <tr>
+                        <td>{{ review['Product Name'] }}</td>
+                        <td>{{ review['Over_All_Rating'] }}</td>
+                        <td>{{ review['Price'] }}</td>
+                        <td>{{ review['Date'] }}</td>
+                        <td>{{ review['Rating'] }}</td>
+                        <td>{{ review['Name'] }}</td>
+                        <td>{{ review['Comment'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Link Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
