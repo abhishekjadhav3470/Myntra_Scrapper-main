@@ -88,7 +88,7 @@ def index():
                     reviews.append(mydict)
                 writer.writerows(reviews) 
           client = pymongo.MongoClient("mongodb+srv://abc:abc@cluster0.lj6xm5o.mongodb.net/?retryWrites=true&w=majority")
-          db = client['flipkart_scrap1']
+          db = client['myntra_scrap1']
           review_col = db['review_scrap_data']
           review_col.insert_many(reviews)
           return render_template('results.html', reviews=reviews[0:(len(reviews)-1)])
